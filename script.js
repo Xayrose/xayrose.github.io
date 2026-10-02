@@ -15,7 +15,7 @@ function smoothScroll() {
 }
 
 function setupTilt() {
-  if (reduced || !window.gsap) return;
+  if (reduced) return;
   document.querySelectorAll(".tilt-card").forEach(card => {
     const depth = Number(card.dataset.depth || 18);
     const reset = () => {
@@ -26,16 +26,23 @@ function setupTilt() {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - .5;
       const y = (e.clientY - r.top) / r.height - .5;
-      gsap.to(card, { rotateY: x * depth, rotateX: -y * depth, duration: .35, overwrite: true, ease: "power2.out" });
+      if (window.gsap) {
+        gsap.to(card, { rotateY: x * depth, rotateX: -y * depth, duration: .35, overwrite: true, ease: "power2.out" });
+      } else {
+        card.style.transform = "perspective(900px) rotateX(" + (-y * depth) + "deg) rotateY(" + (x * depth) + "deg)";
+      }
       const glow = card.querySelector(".card-glow");
-      if (glow) gsap.to(glow, { x: x * 90, y: y * 90, duration: .5, overwrite: true });
+      if (glow) {
+        if (window.gsap) gsap.to(glow, { x: x * 90, y: y * 90, duration: .5, overwrite: true });
+        else glow.style.transform = "translate(" + (x * 90) + "px," + (y * 90) + "px)";
+      }
     });
     card.addEventListener("pointerleave", reset);
   });
 }
 
 function setupScroll() {
-  if (!window.gsap || reduced) return;
+  if (reduced) return;
   if (!window.gsap || !window.ScrollTrigger) {
     const reveal = () => {
       document.querySelectorAll(".section-head, .project-card, .skill-copy, .about-grid, .contact-card").forEach(el => {
@@ -244,5 +251,16 @@ function setupThree() {
 smoothScroll();
 buildSkillSphere();
 setupTilt();
-if (window.gsap && window.ScrollTrigger) setupScroll();
-setupThree();
+setupScroll();
+
+async function loadThreeAndStart() {
+  try {
+    THREE = await import("https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js");
+    setupThree();
+  } catch (error) {
+    const mount = document.getElementById("webgl");
+    if (mount) mount.style.display = "none";
+  }
+}
+
+loadThreeAndStart();
