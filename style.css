@@ -107,3 +107,63 @@ footer{width:min(1200px,90vw);margin:auto;padding:0 0 35px;display:flex;justify-
   .contact-link b{margin-left:auto}
   footer{gap:12px;flex-wrap:wrap}
 }
+
+
+/* Final responsive + WebGL layering */
+body{position:relative;isolation:isolate}
+#webgl{z-index:0}
+main,footer{position:relative;z-index:1}
+.nav{z-index:15}
+.noise{z-index:20}
+.hero-copy,.hero-orbit,.scroll-cue{z-index:2}
+
+@media (max-width:1100px){
+  .scene-section,.section,footer{width:min(92vw,900px)}
+  .hero{grid-template-columns:1fr .7fr;gap:20px}
+  .hero h1{font-size:clamp(54px,7.2vw,82px);letter-spacing:-.06em}
+  .hero-lead{max-width:560px}
+  .hero-orbit{height:540px}
+  .project-card{min-height:590px}
+}
+
+@media (max-width:900px){
+  .scene-section,.section,footer{width:calc(100% - 36px);max-width:none}
+  .hero{grid-template-columns:1fr;min-height:100svh;padding-top:88px}
+  .hero h1{font-size:clamp(48px,8.5vw,72px);max-width:720px}
+  .hero-orbit{position:absolute;inset:150px -30px auto;height:460px;opacity:.42;z-index:0}
+  .hero-copy{z-index:2}
+  .hero-lead{font-size:16px;max-width:620px}
+  .hero-meta{max-width:620px}
+  .project-grid,.skills-layout,.about-grid,.contact-card{grid-template-columns:1fr}
+  .project-wide{grid-column:auto}
+  .skills-sphere{height:460px}
+}
+
+@media (max-width:560px){
+  .scene-section,.section,footer{width:calc(100% - 28px)}
+  .nav{height:58px;padding:0 14px}
+  .logo{font-size:11px}
+  .hero{padding-top:76px;min-height:100svh}
+  .hero h1{font-size:clamp(40px,12vw,54px);line-height:.92;letter-spacing:-.055em;margin:15px 0 22px}
+  .hero-lead{font-size:14px;line-height:1.55;margin-bottom:24px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn{min-height:46px;justify-content:space-between}
+  .hero-meta{font-size:8px;gap:7px 12px;margin-top:24px}
+  .hero-orbit{inset:125px -55px auto;height:360px;opacity:.24}
+  .scroll-cue{bottom:20px;font-size:7px}
+  .section{padding:72px 0}
+  .section-head{margin-bottom:30px}
+  .project-card{padding:16px;min-height:0}
+  .project-art{height:190px}
+  .project-body h2{font-size:28px}
+  .project-link{position:relative;right:auto;bottom:auto;display:inline-block;margin-top:22px}
+  .project-result{flex-direction:column;gap:5px}
+  .skill-list div{grid-template-columns:28px 1fr}
+  .skill-list small{grid-column:2}
+  .skills-sphere{height:330px}
+  .about h2,.contact h2{font-size:clamp(42px,12vw,54px)}
+  .contact-card{padding:24px}
+  .contact-link{gap:8px;flex-wrap:wrap}
+  .contact-link b{margin-left:auto}
+  footer{gap:10px;flex-wrap:wrap;font-size:7px}
+}
