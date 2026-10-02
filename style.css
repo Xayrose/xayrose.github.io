@@ -39,3 +39,71 @@ footer{width:min(1200px,90vw);margin:auto;padding:0 0 35px;display:flex;justify-
 @media(prefers-reduced-motion:reduce){
   html{scroll-behavior:auto}.btn,.project-card,.contact-link{transition:none}.noise{display:none}
 }
+
+/* Mobile safety + layout repair */
+@media (max-width: 900px){
+  html,body{width:100%;max-width:100%;overflow-x:hidden}
+  .scene-section,.section,footer{width:calc(100% - 32px);max-width:none}
+  .hero{min-height:100svh}
+  .hero-copy{min-width:0;width:100%}
+  .hero h1,.hero-lead{max-width:100%;overflow-wrap:anywhere}
+  .hero h1{word-break:normal}
+}
+
+@media (max-width: 560px){
+  .nav{
+    top:env(safe-area-inset-top,0px);
+    height:58px;
+    min-height:58px;
+    padding:0 16px;
+  }
+  .logo{font-size:12px;letter-spacing:.12em}
+  .nav-status{font-size:8px}
+  .hero{
+    width:calc(100% - 32px);
+    padding-top:calc(76px + env(safe-area-inset-top,0px));
+    align-items:start;
+    min-height:100svh;
+  }
+  .hero h1{
+    font-size:clamp(42px,12.8vw,52px);
+    line-height:.9;
+    letter-spacing:-.055em;
+    margin:16px 0 24px;
+  }
+  .hero-lead{
+    font-size:15px;
+    line-height:1.55;
+    margin-bottom:26px;
+  }
+  .hero-actions{gap:9px}
+  .btn{min-height:46px;padding:0 15px}
+  .hero-meta{gap:8px 14px;margin-top:25px;line-height:1.5}
+  .hero-orbit{
+    inset:135px -30px auto;
+    height:330px;
+    opacity:.32;
+    pointer-events:none;
+  }
+  .orbit-label{font-size:8px}
+  .label-a{right:0}.label-b{left:0}.label-c{right:-4px}
+  .scroll-cue{bottom:22px;font-size:8px}
+
+  .section{padding:72px 0}
+  .section-head{margin-bottom:32px}
+  .project-card{min-width:0;width:100%;min-height:0}
+  .project-body p{line-height:1.55}
+  .project-result{min-width:0}
+  .project-result span{overflow-wrap:anywhere}
+  .skills-layout,.about-grid,.contact-card{min-width:0}
+  .skills-sphere{width:100%;max-width:100%}
+  .principles{gap:10px 18px}
+  .contact-card{width:100%;overflow:hidden}
+  .contact-link{
+    gap:10px;
+    flex-wrap:wrap;
+    justify-content:flex-start;
+  }
+  .contact-link b{margin-left:auto}
+  footer{gap:12px;flex-wrap:wrap}
+}
