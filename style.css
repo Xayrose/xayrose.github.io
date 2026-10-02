@@ -245,3 +245,40 @@ main,footer{position:relative;z-index:1}
 /* Remove list-number gutter after visual cleanup */
 .skill-list div{grid-template-columns:1fr auto}
 @media(max-width:560px){.skill-list div{grid-template-columns:1fr}.skill-list small{grid-column:auto}}
+
+
+/* Motion engine polish */
+#webgl{opacity:.92;transition:opacity .8s ease;will-change:transform}
+#webgl canvas{display:block;width:100%;height:100%}
+.hero-orbit{transform-style:preserve-3d;transition:transform .7s cubic-bezier(.2,.8,.2,1)}
+.project-card{will-change:transform;transform-style:preserve-3d}
+.project-card .project-art,.project-card .project-body,.project-card .project-top{transform-style:preserve-3d}
+.project-card .project-art{transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.project-card:hover .project-art{transform:translateZ(48px) scale(1.015)}
+.orbit-label{animation:floatTag 4.5s ease-in-out infinite}
+.label-b{animation-delay:-1.5s}.label-c{animation-delay:-3s}
+.art-ring{animation:spinRing 9s linear infinite}
+.art-node{animation:pulseNode 2.8s ease-in-out infinite}
+.flow-node{animation:floatNode 3.6s ease-in-out infinite}
+.flow-node.n2{animation-delay:-1.2s}.flow-node.n3{animation-delay:-2.4s}
+.window{animation:screenFloat 5s ease-in-out infinite}
+.scroll-cue b{animation:scanLine 1.8s ease-in-out infinite}
+
+@keyframes floatTag{0%,100%{transform:translate3d(0,0,0)}50%{transform:translate3d(0,-8px,10px)}}
+@keyframes spinRing{to{transform:rotate(360deg)}}
+@keyframes pulseNode{0%,100%{transform:scale(1);box-shadow:0 0 28px rgba(0,245,255,.12)}50%{transform:scale(1.08);box-shadow:0 0 52px rgba(0,245,255,.28)}}
+@keyframes floatNode{0%,100%{transform:translateY(0)}50%{transform:translateY(-7px)}}
+@keyframes screenFloat{0%,100%{transform:translateY(0) rotateX(0deg)}50%{transform:translateY(-7px) rotateX(2deg)}}
+@keyframes scanLine{0%,100%{transform:scaleX(.65);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}
+
+.section-head,.project-card,.skill-copy,.about-grid,.contact-card{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.is-visible{opacity:1!important;transform:translateY(0)!important}
+@media(prefers-reduced-motion:reduce){
+  #webgl{opacity:.55}
+  .orbit-label,.art-ring,.art-node,.flow-node,.window,.scroll-cue b{animation:none}
+  .section-head,.project-card,.skill-copy,.about-grid,.contact-card{opacity:1;transform:none;transition:none}
+}
+@media(max-width:560px){
+  #webgl{opacity:.62}
+  .project-card:hover .project-art{transform:none}
+}
