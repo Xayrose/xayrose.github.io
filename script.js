@@ -176,26 +176,41 @@ function setupThree() {
   }, { passive: true });
 
   let scroll = 0;
-  addEventListener("scroll", () => { scroll = scrollY; }, { passive: true });
+  const readScroll = () => { scroll = scrollY; };
+  addEventListener("scroll", readScroll, { passive: true });
 
   const clock = new THREE.Clock();
   function animate() {
     const t = clock.getElapsedTime();
+    const maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
+    const progress = Math.min(1, scroll / maxScroll);
+
     if (!reduced) {
       mouse.x += (mouse.tx - mouse.x) * .035;
       mouse.y += (mouse.ty - mouse.y) * .035;
-      group.rotation.y = mouse.x * .22 + t * .055 + scroll * .00016;
+
+      // Scroll-driven camera flight through the 3D space.
+      const targetZ = 7 - progress * 9;
+      const targetY = -progress * 1.8;
+      camera.position.z += (targetZ - camera.position.z) * .025;
+      camera.position.y += ((targetY - mouse.y * .18) - camera.position.y) * .025;
+
+      group.position.z = -progress * 5.5;
+      group.rotation.y = mouse.x * .22 + t * .055 + progress * Math.PI * .7;
       group.rotation.x = mouse.y * .1 + Math.sin(t * .25) * .04;
-      torus.rotation.x = t * .35;
+
+      torus.rotation.x = t * .35 + progress * 1.4;
       torus.rotation.z = t * .22;
       ico.rotation.x = -t * .18;
-      ico.rotation.y = t * .3;
+      ico.rotation.y = t * .3 + progress * 1.1;
       icoWire.rotation.copy(ico.rotation);
       knot.rotation.x = t * .25;
       knot.rotation.y = -t * .32;
+    } else {
+      camera.position.y += ((-mouse.y * .08) - camera.position.y) * .02;
     }
+
     camera.position.x += ((mouse.x * .35) - camera.position.x) * .02;
-    camera.position.y += ((-mouse.y * .18) - camera.position.y) * .02;
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
