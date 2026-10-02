@@ -241,3 +241,7 @@ main,footer{position:relative;z-index:1}
   .contact-card{padding-bottom:48px}
   .telegram-handle{right:16px;bottom:14px;font-size:10px}
 }
+
+/* Remove list-number gutter after visual cleanup */
+.skill-list div{grid-template-columns:1fr auto}
+@media(max-width:560px){.skill-list div{grid-template-columns:1fr}.skill-list small{grid-column:auto}}
