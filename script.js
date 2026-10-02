@@ -1,4 +1,4 @@
-import * as THREE from "three";
+import * as THREE from "https://cdn.jsdelivr.net/npm/three@0.180.0/build/three.module.js";
 
 const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const root = document.documentElement;
@@ -18,7 +18,10 @@ function setupTilt() {
   if (reduced || !window.gsap) return;
   document.querySelectorAll(".tilt-card").forEach(card => {
     const depth = Number(card.dataset.depth || 18);
-    const reset = () => gsap.to(card, { rotateX: 0, rotateY: 0, duration: .65, ease: "power3.out" });
+    const reset = () => {
+      if (window.gsap) gsap.to(card, { rotateX: 0, rotateY: 0, duration: .65, ease: "power3.out" });
+      else card.style.transform = "";
+    };
     card.addEventListener("pointermove", e => {
       const r = card.getBoundingClientRect();
       const x = (e.clientX - r.left) / r.width - .5;
@@ -33,6 +36,17 @@ function setupTilt() {
 
 function setupScroll() {
   if (!window.gsap || reduced) return;
+  if (!window.gsap || !window.ScrollTrigger) {
+    const reveal = () => {
+      document.querySelectorAll(".section-head, .project-card, .skill-copy, .about-grid, .contact-card").forEach(el => {
+        const r = el.getBoundingClientRect();
+        if (r.top < innerHeight * .88) el.classList.add("is-visible");
+      });
+    };
+    addEventListener("scroll", reveal, { passive: true });
+    reveal();
+    return;
+  }
   gsap.registerPlugin(ScrollTrigger);
   gsap.utils.toArray(".section").forEach(section => {
     gsap.from(section.querySelectorAll(".section-head, .project-card, .skill-copy, .about-grid, .contact-card"), {
@@ -116,10 +130,11 @@ function setupThree() {
   const camera = new THREE.PerspectiveCamera(55, innerWidth / innerHeight, .1, 100);
   camera.position.set(0, 0, 7);
 
-  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.7));
+  const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true, powerPreference: "high-performance" });
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.8));
   renderer.setSize(innerWidth, innerHeight);
   renderer.outputColorSpace = THREE.SRGBColorSpace;
+  renderer.domElement.setAttribute("aria-hidden", "true");
   mount.appendChild(renderer.domElement);
 
   const group = new THREE.Group();
@@ -180,6 +195,7 @@ function setupThree() {
   addEventListener("scroll", readScroll, { passive: true });
 
   const clock = new THREE.Clock();
+  const target = new THREE.Vector3();
   function animate() {
     const t = clock.getElapsedTime();
     const maxScroll = Math.max(1, document.documentElement.scrollHeight - innerHeight);
@@ -211,6 +227,8 @@ function setupThree() {
     }
 
     camera.position.x += ((mouse.x * .35) - camera.position.x) * .02;
+    target.set(mouse.x * .5, mouse.y * -.25 + progress * -.9, -3.5 - progress * 4.5);
+    camera.lookAt(target);
     renderer.render(scene, camera);
     requestAnimationFrame(animate);
   }
