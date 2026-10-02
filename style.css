@@ -167,3 +167,77 @@ main,footer{position:relative;z-index:1}
   .contact-link b{margin-left:auto}
   footer{gap:10px;flex-wrap:wrap;font-size:7px}
 }
+
+/* Contact + CTA refinement */
+.btn{
+  position:relative;
+  min-width:178px;
+  justify-content:space-between;
+  border-radius:14px;
+  overflow:hidden;
+}
+.btn i{font-style:normal;font-size:17px;line-height:1;transition:transform .3s ease}
+.btn-primary{
+  background:linear-gradient(100deg,#ffffff 0%,#dffcff 52%,#aeefff 100%);
+  color:#071018;
+  border-color:rgba(255,255,255,.85);
+  box-shadow:0 12px 35px rgba(0,245,255,.12),inset 0 1px rgba(255,255,255,.9);
+}
+.btn-primary:after{
+  content:"";
+  position:absolute;inset:0;
+  background:linear-gradient(110deg,transparent 25%,rgba(255,255,255,.55) 50%,transparent 75%);
+  transform:translateX(-130%);
+  transition:transform .55s ease;
+}
+.btn-primary:hover:after{transform:translateX(130%)}
+.btn-primary:hover i{transform:translate(4px,4px)}
+.btn-telegram{
+  color:#fff;
+  border-color:rgba(0,245,255,.55);
+  background:linear-gradient(135deg,rgba(0,245,255,.12),rgba(168,85,247,.12));
+  box-shadow:0 12px 35px rgba(0,245,255,.08),inset 0 0 24px rgba(0,245,255,.04);
+}
+.btn-telegram:before{
+  content:"";
+  position:absolute;inset:-1px;
+  border-radius:inherit;
+  padding:1px;
+  background:linear-gradient(110deg,rgba(0,245,255,.9),rgba(168,85,247,.75),rgba(0,245,255,.25));
+  -webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);
+  -webkit-mask-composite:xor;
+  mask-composite:exclude;
+  pointer-events:none;
+}
+.btn-telegram:hover{box-shadow:0 16px 45px rgba(0,245,255,.16),0 0 28px rgba(168,85,247,.12)}
+.btn-telegram:hover i{transform:translate(4px,-4px) rotate(-8deg)}
+.project-card{transition:border-color .3s,box-shadow .3s,transform .3s}
+.project-card:hover{box-shadow:0 35px 90px rgba(0,0,0,.46),0 0 34px rgba(0,245,255,.06)}
+.telegram-mark{
+  display:inline-grid;place-items:center;
+  width:30px;height:30px;margin-right:10px;
+  border-radius:50%;
+  color:#071018;font-style:normal;
+  background:linear-gradient(135deg,#00f5ff,#a855f7);
+  box-shadow:0 0 22px rgba(0,245,255,.25);
+}
+.contact-link{padding:20px 0}
+.contact-link span{display:flex;align-items:center;color:#dce1ef}
+.contact-link.primary b{color:#fff}
+.telegram-handle{
+  position:absolute;
+  right:18px;
+  bottom:22px;
+  color:#7f88a2;
+  font:600 11px "Space Grotesk";
+  letter-spacing:.08em;
+  transition:.25s;
+}
+.telegram-handle:hover{color:var(--cyan);text-shadow:0 0 18px rgba(0,245,255,.35)}
+.contact{position:relative}
+.contact-card{padding-bottom:65px}
+@media(max-width:560px){
+  .btn{min-width:0;width:100%;border-radius:13px}
+  .contact-card{padding-bottom:48px}
+  .telegram-handle{right:16px;bottom:14px;font-size:10px}
+}
