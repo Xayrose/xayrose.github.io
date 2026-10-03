@@ -63,13 +63,21 @@ function setupScroll() {
     reveal();
     return;
   }
-  gsap.registerPlugin(ScrollTrigger);
-  gsap.utils.toArray(".section").forEach(section => {
-    gsap.from(section.querySelectorAll(".section-head, .project-card, .skill-copy, .about-grid, .contact-card"), {
-      y: 55, opacity: 0, duration: .9, ease: "power3.out", stagger: .08,
-      scrollTrigger: { trigger: section, start: "top 78%", once: true }
+  try {
+    gsap.registerPlugin(ScrollTrigger);
+    gsap.utils.toArray(".section").forEach(section => {
+      const items = section.querySelectorAll(".section-head, .project-card, .skill-copy, .about-grid, .contact-card");
+      gsap.from(items, {
+        y: 55, duration: .9, ease: "power3.out", stagger: .08,
+        scrollTrigger: { trigger: section, start: "top 78%", once: true }
+      });
     });
-  });
+  } catch (error) {
+    document.querySelectorAll(".section-head, .project-card, .skill-copy, .about-grid, .contact-card").forEach(el => {
+      el.style.opacity = "1";
+      el.style.transform = "translateY(0)";
+    });
+  }
   gsap.to(".hero-copy", { yPercent: -12, opacity: .82, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
   gsap.to(".hero-orbit", { yPercent: 18, rotation: 3, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
 }
