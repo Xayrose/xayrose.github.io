@@ -271,7 +271,7 @@ main,footer{position:relative;z-index:1}
 @keyframes screenFloat{0%,100%{transform:translateY(0) rotateX(0deg)}50%{transform:translateY(-7px) rotateX(2deg)}}
 @keyframes scanLine{0%,100%{transform:scaleX(.65);transform-origin:left}50%{transform:scaleX(1);transform-origin:left}}
 
-.section-head,.project-card,.skill-copy,.about-grid,.contact-card{opacity:0;transform:translateY(36px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
+.section-head,.project-card,.skill-copy,.about-grid,.contact-card{opacity:1;transform:translateY(0);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.8,.2,1)}
 .is-visible{opacity:1!important;transform:translateY(0)!important}
 @media(prefers-reduced-motion:reduce){
   #webgl{opacity:.55}
