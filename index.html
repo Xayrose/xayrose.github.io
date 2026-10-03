@@ -1,165 +1,31 @@
 <!doctype html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-  <meta name="description" content="Безликий — разработчик Telegram-ботов, сайтов, скриптов и автоматизаций.">
-  <meta name="theme-color" content="#0a0a12">
-  <title>Безликий | Bot & Web Developer</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="description" content="Безликий — разработчик Telegram-ботов, сайтов, скриптов и автоматизаций."><meta name="theme-color" content="#0a0a12">
+<title>Безликий | Bot & Web Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet"><link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <div class="noise" aria-hidden="true"></div>
-  <div id="webgl" aria-hidden="true"></div>
-
-  <header class="nav">
-    <a class="logo" href="#top">БЕЗЛИКИЙ<span>/</span></a>
-    <nav>
-      <a href="#projects">Проекты</a>
-      <a href="#skills">Навыки</a>
-      <a href="#about">О себе</a>
-      <a href="#contact">Контакты</a>
-    </nav>
-    <a class="nav-status" href="https://t.me/Xayrose" target="_blank" rel="noopener">
-      <i></i> TELEGRAM
-    </a>
-  </header>
-
-  <main id="top">
-    <section class="hero scene-section">
-      <div class="hero-copy">
-        <p class="kicker">FULL-STACK BOT & WEB DEVELOPER</p>
-        <h1>Код, который<br><em>делает работу.</em></h1>
-        <p class="hero-lead">Telegram-боты, сайты, скрипты и автоматизации. Собираю цифровые инструменты вокруг задачи, а не вокруг модных технологий.</p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projects"><span>Смотреть проекты</span><i>↘</i></a>
-          <a class="btn btn-telegram" href="https://t.me/Xayrose" target="_blank" rel="noopener"><span>Связаться</span><i>↗</i></a>
-        </div>
-        <div class="hero-meta">
-          <span>HTML / CSS / JS</span>
-          <span>PYTHON / NODE.JS</span>
-          <span>TELEGRAM API</span>
-        </div>
-      </div>
-      <div class="hero-orbit">
-        <div class="orbit-label label-a">BOT</div>
-        <div class="orbit-label label-b">WEB</div>
-        <div class="orbit-label label-c">AUTO</div>
-        <div class="crosshair"></div>
-      </div>
-      <div class="scroll-cue"><span>SCROLL TO EXPLORE</span><b></b></div>
-    </section>
-
-    <section id="projects" class="section projects">
-      <div class="section-head">
-        <div><span class="kicker">MY PROJECTS</span></div>
-        <p>Практичные решения<br>без лишней сложности.</p>
-      </div>
-
-      <div class="project-grid">
-        <article class="project-card tilt-card" data-depth="18">
-          <div class="card-glow"></div>
-          <div class="project-top"><span>TELEGRAM BOT</span><span>PYTHON</span></div>
-          <div class="project-art art-bot"><div class="art-ring"></div><div class="art-node">TG</div></div>
-          <div class="project-body">
-            <span class="project-type">Telegram Bot</span>
-            <h2>Бот для заявок</h2>
-            <p>Принимает обращения клиентов, задаёт вопросы по сценарию, сохраняет заявки и отправляет уведомления владельцу.</p>
-            <div class="stack"><span>Python</span><span>Telegram API</span><span>SQLite</span></div>
-            <div class="project-result"><b>Результат</b><span>заявки собираются автоматически</span></div>
-          </div>
-        </article>
-
-        <article class="project-card tilt-card" data-depth="24">
-          <div class="card-glow"></div>
-          <div class="project-top"><span>WEB SITE</span><span>VANILLA JS</span></div>
-          <div class="project-art art-web"><div class="window"><i></i><i></i><i></i><div class="window-line"></div><div class="window-line short"></div><div class="window-grid"></div></div></div>
-          <div class="project-body">
-            <span class="project-type">Website</span>
-            <h2>Сайт-портфолио</h2>
-            <p>Адаптивный одностраничный сайт с анимациями, интерактивными карточками и аккуратной мобильной версией.</p>
-            <div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div>
-            <div class="project-result"><b>Результат</b><span>быстрая презентация работы</span></div>
-          </div>
-        </article>
-
-        <article class="project-card tilt-card project-wide" data-depth="20">
-          <div class="card-glow"></div>
-          <div class="project-top"><span>AUTOMATION</span><span>PYTHON / API</span></div>
-          <div class="project-art art-auto"><div class="flow-line line-1"></div><div class="flow-line line-2"></div><div class="flow-node n1">IN</div><div class="flow-node n2">RUN</div><div class="flow-node n3">OUT</div></div>
-          <div class="project-body">
-            <span class="project-type">Script & Automation</span>
-            <h2>Автоматизация рутины</h2>
-            <p>Скрипт получает данные из API, обрабатывает их по правилам и формирует готовый результат без ручного копирования.</p>
-            <div class="stack"><span>Python</span><span>REST API</span><span>Automation</span></div>
-            <div class="project-result"><b>Результат</b><span>несколько действий превращаются в один запуск</span></div>
-          </div>
-        </article>
-      </div>
-    </section>
-
-    <section id="skills" class="section skills">
-      <div class="section-head">
-        <div><span class="kicker">STACK / SKILLS</span></div>
-        <p>Технологии соединяются<br>в рабочую систему.</p>
-      </div>
-      <div class="skills-layout">
-        <div class="skill-copy">
-          <h2>Не коллекционирую<br><em>инструменты.</em></h2>
-          <p>Выбираю стек под задачу: от простого vanilla-скрипта до полноценного сервиса с API, базой данных и автоматизацией.</p>
-          <div class="skill-list">
-            <div><b>Telegram API</b><small>bots / webhooks / payments</small></div>
-            <div><b>Python / Node.js</b><small>backend / scripts / services</small></div>
-            <div><b>Web</b><small>HTML / CSS / JS / React</small></div>
-            <div><b>Database</b><small>SQLite / PostgreSQL</small></div>
-            <div><b>Automation</b><small>APIs / cron / Docker</small></div>
-          </div>
-        </div>
-        <div class="skills-sphere" id="skills-sphere">
-          <span class="sphere-caption">INTERACTIVE<br>TECH MAP</span>
-        </div>
-      </div>
-    </section>
-
-    <section id="about" class="section about">
-      <div class="section-head">
-        <div><span class="kicker">ABOUT / METHOD</span></div>
-      </div>
-      <div class="about-grid">
-        <h2>Автоматизация<br>должна <em>исчезать.</em></h2>
-        <div class="about-text">
-          <p>Хороший инструмент не требует отдельного ритуала. Он встраивается в процесс и спокойно делает свою работу.</p>
-          <p>Сначала разбираю задачу, затем проектирую логику и только после этого выбираю технологии. Меньше лишних слоёв, больше понятного кода.</p>
-          <div class="principles"><span>THINK</span><span>BUILD</span><span>SHIP</span></div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="section contact">
-      <div class="contact-card">
-        <div>
-          <span class="kicker">CONTACT</span>
-          <h2>Есть задача?<br><em>Давайте соберем.</em></h2>
-          <p>Напиши в Telegram. Можно коротко описать идею или сразу отправить техническое задание.</p>
-        </div>
-        <div class="contact-links">
-          <a class="contact-link primary" href="https://t.me/Xayrose" target="_blank" rel="noopener">
-            <span><i class="telegram-mark">✈</i> Написать в Telegram</span>
-            <b>Открыть чат ↗</b>
-          </a>
-        </div>
-      </div>
-      <a class="telegram-handle" href="https://t.me/Xayrose" target="_blank" rel="noopener">@Xayrose</a>
-    </section>
-  </main>
-
-  <footer><span>БЕЗЛИКИЙ / 2026</span><span>BUILT WITH CODE</span></footer>
-
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script>
-  <script type="module" src="script.js"></script>
-</body>
-</html>
+<div class="noise" aria-hidden="true"></div><div id="webgl" aria-hidden="true"></div>
+<header class="nav">
+<a class="logo" href="#top">БЕЗЛИКИЙ<span>/</span></a>
+<button class="menu-toggle" type="button" aria-label="Открыть меню" aria-expanded="false" aria-controls="mobile-menu"><span></span><span></span><span></span></button>
+<nav class="desktop-nav"><a href="#projects">Проекты</a><a href="#skills">Навыки</a><a href="#about">О себе</a><a href="#contact">Контакты</a></nav>
+<a class="nav-status" href="https://t.me/Xayrose" target="_blank" rel="noopener"><i></i> TELEGRAM</a>
+</header>
+<div class="mobile-menu" id="mobile-menu" aria-hidden="true"><nav><a href="#projects">Проекты</a><a href="#skills">Навыки</a><a href="#about">О себе</a><a href="#contact">Контакты</a></nav></div>
+<main id="top">
+<section class="hero scene-section"><div class="hero-copy"><p class="kicker">FULL-STACK BOT & WEB DEVELOPER</p><h1>Код, который<br><em>делает работу.</em></h1><p class="hero-lead">Telegram-боты, сайты, скрипты и автоматизации. Собираю цифровые инструменты вокруг задачи, а не вокруг модных технологий.</p><div class="hero-actions"><a class="btn btn-primary" href="#projects"><span>Смотреть проекты</span><i>↘</i></a><a class="btn btn-telegram" href="https://t.me/Xayrose" target="_blank" rel="noopener"><span>Связаться</span><i>↗</i></a></div><div class="hero-meta"><span>HTML / CSS / JS</span><span>PYTHON / NODE.JS</span><span>TELEGRAM API</span></div></div><div class="hero-orbit"><div class="orbit-label label-a">BOT</div><div class="orbit-label label-b">WEB</div><div class="orbit-label label-c">AUTO</div><div class="crosshair"></div></div><div class="scroll-cue"><span>SCROLL TO EXPLORE</span><b></b></div></section>
+<section id="projects" class="section projects"><div class="section-head"><div><span class="kicker">MY PROJECTS</span></div><p>Практичные решения<br>без лишней сложности.</p></div><div class="project-grid">
+<article class="project-card tilt-card" data-depth="18"><div class="card-glow"></div><div class="project-top"><span>TELEGRAM BOT</span><span>PYTHON</span></div><div class="project-art art-bot"><div class="art-ring"></div><div class="art-node">TG</div></div><div class="project-body"><span class="project-type">Telegram Bot</span><h2>Бот для заявок</h2><p>Принимает обращения клиентов, задаёт вопросы по сценарию, сохраняет заявки и отправляет уведомления владельцу.</p><div class="stack"><span>Python</span><span>Telegram API</span><span>SQLite</span></div><div class="project-result"><b>Результат</b><span>заявки собираются автоматически</span></div></div></article>
+<article class="project-card tilt-card" data-depth="24"><div class="card-glow"></div><div class="project-top"><span>WEB SITE</span><span>VANILLA JS</span></div><div class="project-art art-web"><div class="window"><i></i><i></i><i></i><div class="window-line"></div><div class="window-line short"></div><div class="window-grid"></div></div></div><div class="project-body"><span class="project-type">Website</span><h2>Сайт-портфолио</h2><p>Адаптивный одностраничный сайт с анимациями, интерактивными карточками и аккуратной мобильной версией.</p><div class="stack"><span>HTML</span><span>CSS</span><span>JavaScript</span></div><div class="project-result"><b>Результат</b><span>быстрая презентация работы</span></div></div></article>
+<article class="project-card tilt-card project-wide" data-depth="20"><div class="card-glow"></div><div class="project-top"><span>AUTOMATION</span><span>PYTHON / API</span></div><div class="project-art art-auto"><div class="flow-line line-1"></div><div class="flow-line line-2"></div><div class="flow-node n1">IN</div><div class="flow-node n2">RUN</div><div class="flow-node n3">OUT</div></div><div class="project-body"><span class="project-type">Script & Automation</span><h2>Автоматизация рутины</h2><p>Скрипт получает данные из API, обрабатывает их по правилам и формирует готовый результат без ручного копирования.</p><div class="stack"><span>Python</span><span>REST API</span><span>Automation</span></div><div class="project-result"><b>Результат</b><span>несколько действий превращаются в один запуск</span></div></div></article>
+</div></section>
+<section id="skills" class="section skills"><div class="section-head"><div><span class="kicker">STACK / SKILLS</span></div><p>Технологии соединяются<br>в рабочую систему.</p></div><div class="skills-layout"><div class="skill-copy"><h2>Не коллекционирую<br><em>инструменты.</em></h2><p>Выбираю стек под задачу: от простого vanilla-скрипта до полноценного сервиса с API, базой данных и автоматизацией.</p><div class="skill-list"><div><b>Telegram API</b><small>bots / webhooks / payments</small></div><div><b>Python / Node.js</b><small>backend / scripts / services</small></div><div><b>Web</b><small>HTML / CSS / JS / React</small></div><div><b>Database</b><small>SQLite / PostgreSQL</small></div><div><b>Automation</b><small>APIs / cron / Docker</small></div></div></div><div class="skills-sphere" id="skills-sphere"><span class="sphere-caption">INTERACTIVE<br>TECH MAP</span></div></div></section>
+<section id="about" class="section about"><div class="section-head"><div><span class="kicker">ABOUT / METHOD</span></div></div><div class="about-grid"><h2>Автоматизация<br>должна <em>исчезать.</em></h2><div class="about-text"><p>Хороший инструмент не требует отдельного ритуала. Он встраивается в процесс и спокойно делает свою работу.</p><p>Сначала разбираю задачу, затем проектирую логику и только после этого выбираю технологии. Меньше лишних слоёв, больше понятного кода.</p><div class="principles"><span>THINK</span><span>BUILD</span><span>SHIP</span></div></div></div></section>
+<section id="contact" class="section contact"><div class="contact-card"><div><span class="kicker">CONTACT</span><h2>Есть задача?<br><em>Давайте соберем.</em></h2><p>Напиши в Telegram. Можно коротко описать идею или сразу отправить техническое задание.</p></div><div class="contact-links"><a class="contact-link primary" href="https://t.me/Xayrose" target="_blank" rel="noopener"><span><i class="telegram-mark">✈</i> Написать в Telegram</span><b>Открыть чат ↗</b></a></div></div><a class="telegram-handle" href="https://t.me/Xayrose" target="_blank" rel="noopener">@Xayrose</a></section>
+</main><footer><span>БЕЗЛИКИЙ / 2026</span><span>BUILT WITH CODE</span></footer>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/gsap.min.js"></script><script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollTrigger.min.js"></script><script type="module" src="script.js"></script>
+</body></html>
