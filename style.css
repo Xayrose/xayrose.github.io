@@ -26,3 +26,16 @@
 .study-check{position:absolute;right:17px;bottom:18px;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:rgba(0,245,255,.12);border:1px solid rgba(0,245,255,.4);color:var(--cyan);font-size:17px}
 .study-cross{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(5,8,20,.55);font-size:17px}
 .project-study .project-result a{color:#00dff0;text-decoration:none}.project-study .project-result a:hover{text-decoration:underline}
+
+
+/* STUDY ASSISTANT ICON REDESIGN */
+.art-study{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:13px;background:radial-gradient(ellipse at 50% 48%,rgba(0,225,255,.13),transparent 36%),radial-gradient(ellipse at 50% 100%,rgba(168,85,247,.12),transparent 48%),linear-gradient(135deg,#090e1d,#10172b 55%,#0a0d1a)}
+.study-app-icon{width:132px;height:132px;position:relative;display:grid;place-items:center;border-radius:34px;color:#f4fbff;background:linear-gradient(145deg,#24334d 0%,#101b30 52%,#111126 100%);border:1px solid rgba(180,225,255,.26);box-shadow:0 22px 55px rgba(0,0,0,.48),inset 0 1px 0 rgba(255,255,255,.16),0 0 42px rgba(0,220,255,.12);transform:translateY(-3px) rotate(-5deg);animation:screenFloat 5s ease-in-out infinite}
+.study-icon-glow{position:absolute;inset:9px;border-radius:26px;border:1px solid rgba(0,245,255,.13);background:linear-gradient(145deg,rgba(0,245,255,.07),transparent 55%)}
+.study-icon-letter{position:absolute;top:12px;left:17px;font:700 34px "Space Grotesk";line-height:1;color:#fff;text-shadow:0 0 22px rgba(0,245,255,.2)}
+.study-icon-book{position:absolute;width:72px;height:55px;right:15px;bottom:19px;color:#66edfa;filter:drop-shadow(0 0 12px rgba(0,245,255,.35))}
+.study-icon-plus{position:absolute;right:-7px;top:-7px;width:31px;height:31px;display:grid;place-items:center;border-radius:50%;background:linear-gradient(145deg,#a8fbff,#13bfd7);border:3px solid #111a2d;color:#071521;font-size:15px;font-weight:800;box-shadow:0 5px 18px rgba(0,220,255,.3)}
+.study-icon-caption{display:flex;align-items:center;gap:8px;font:600 8px "Space Grotesk";letter-spacing:.2em;color:#8b9bb7}
+.study-icon-caption i{width:5px;height:5px;border-radius:50%;background:#42e8c4;box-shadow:0 0 10px #42e8c4}
+.study-cross{right:16px;bottom:14px}
+@media(max-width:560px){.study-app-icon{width:112px;height:112px;border-radius:29px}.study-icon-book{width:62px;height:47px;right:12px;bottom:16px}.study-icon-letter{font-size:30px}}
