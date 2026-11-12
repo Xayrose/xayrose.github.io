@@ -15,3 +15,14 @@
 .galaxy-star{position:absolute;width:5px;height:5px;border-radius:50%;background:#00f5ff;box-shadow:0 0 10px #00f5ff}.star-1{left:18%;top:25%}.star-2{right:19%;top:30%;background:#a855f7;box-shadow:0 0 10px #a855f7}.star-3{right:27%;bottom:20%}
 .galaxy-cross{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(5,8,20,.55);font-size:17px}
 .project-galaxy .project-result a{color:#00dff0;text-decoration:none}.project-galaxy .project-result a:hover{text-decoration:underline}
+
+
+/* YANDEX STUDY ASSISTANT */
+.art-study{position:relative;overflow:hidden;min-height:220px;background:radial-gradient(circle at 50% 50%,rgba(0,245,255,.12),transparent 42%),linear-gradient(135deg,#0b1425,#101022);display:grid;place-items:center;text-decoration:none}
+.study-window{position:relative;width:220px;height:142px;padding:15px;border:1px solid rgba(0,245,255,.3);border-radius:13px;background:linear-gradient(145deg,rgba(20,31,53,.96),rgba(9,14,29,.96));box-shadow:0 24px 65px rgba(0,0,0,.4),0 0 38px rgba(0,245,255,.09);animation:screenFloat 5s ease-in-out infinite}
+.study-window-bar{display:flex;gap:5px}.study-window-bar i{width:6px;height:6px;border-radius:50%;background:#62728e}
+.study-mark{margin-top:17px;font:700 29px "Space Grotesk";letter-spacing:-.08em;color:#e9fbff}.study-mark span{color:var(--cyan)}
+.study-lines{display:grid;gap:6px;margin-top:10px}.study-lines b{height:4px;width:72%;border-radius:4px;background:linear-gradient(90deg,rgba(0,245,255,.6),rgba(0,245,255,.06))}.study-lines b:nth-child(2){width:54%;opacity:.65}.study-lines b:nth-child(3){width:63%;opacity:.35}
+.study-check{position:absolute;right:17px;bottom:18px;width:30px;height:30px;display:grid;place-items:center;border-radius:9px;background:rgba(0,245,255,.12);border:1px solid rgba(0,245,255,.4);color:var(--cyan);font-size:17px}
+.study-cross{position:absolute;right:16px;bottom:14px;width:34px;height:34px;border:1px solid rgba(255,255,255,.2);border-radius:50%;display:grid;place-items:center;color:#fff;background:rgba(5,8,20,.55);font-size:17px}
+.project-study .project-result a{color:#00dff0;text-decoration:none}.project-study .project-result a:hover{text-decoration:underline}
