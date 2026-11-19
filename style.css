@@ -60,3 +60,11 @@
 .spark-a{top:24%;left:25%}.spark-b{right:24%;bottom:22%;color:#d69be9}
 @media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card,.project-wide{grid-column:auto;min-height:0}}
 @media(max-width:620px){.project-grid{grid-template-columns:1fr}.project-art{height:180px}}
+
+/* Wordex logo: transparent vector artwork */
+.art-wordex{position:relative;display:flex;align-items:center;justify-content:center;overflow:hidden;background:radial-gradient(ellipse at 50% 55%,rgba(0,205,255,.12),transparent 58%),linear-gradient(145deg,#111b2b,#080d17)}
+.wordex-logo-svg{display:block;width:min(100%,510px);height:100%;max-height:100%;overflow:visible;filter:drop-shadow(0 12px 24px rgba(0,0,0,.35));transition:transform .35s ease}
+.art-wordex:hover .wordex-logo-svg{transform:scale(1.045) rotate(-1deg)}
+.wordex-open{position:absolute;right:13px;bottom:11px;padding:6px 9px;border:1px solid rgba(0,220,255,.22);border-radius:8px;background:rgba(5,12,22,.78);color:#aeefff;font:700 8px 'Space Grotesk',sans-serif;letter-spacing:.12em;opacity:0;transform:translateY(4px);transition:.2s ease}
+.wordex-open span{color:#00e5ff;margin-left:5px}
+.art-wordex:hover .wordex-open{opacity:1;transform:translateY(0)}
