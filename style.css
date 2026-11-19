@@ -39,3 +39,24 @@
 .study-icon-caption i{width:5px;height:5px;border-radius:50%;background:#42e8c4;box-shadow:0 0 10px #42e8c4}
 .study-cross{right:16px;bottom:14px}
 @media(max-width:560px){.study-app-icon{width:112px;height:112px;border-radius:29px}.study-icon-book{width:62px;height:47px;right:12px;bottom:16px}.study-icon-letter{font-size:30px}}
+
+
+/* PROJECT GRID — compact two-column layout */
+.project-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+.project-card,.project-wide{grid-column:auto;min-height:0}
+.project-art{height:190px}
+.project-body h2{font-size:29px}
+.project-body p{max-width:none}
+.project-result{margin-top:20px}
+.art-wordex{overflow:hidden;border:1px solid rgba(0,245,255,.14);background:radial-gradient(circle at 50% 48%,rgba(0,245,255,.13),transparent 35%),linear-gradient(145deg,#111b2c,#0b1020)}
+.wordex-sheet{position:absolute;width:118px;height:145px;border:1px solid rgba(0,245,255,.28);border-radius:12px;background:linear-gradient(145deg,#1d2b40,#101827);box-shadow:0 18px 45px rgba(0,0,0,.38)}
+.sheet-back{transform:translate(27px,-5px) rotate(12deg);opacity:.55}
+.sheet-mid{transform:translate(-23px,4px) rotate(-11deg);opacity:.75}
+.sheet-front{display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;padding:22px;transform:rotate(2deg);box-shadow:0 20px 55px rgba(0,0,0,.5),0 0 30px rgba(0,245,255,.1)}
+.sheet-front span{font-size:25px;color:#9cecf0;text-shadow:0 0 16px rgba(0,245,255,.35)}
+.sheet-front span:nth-child(2){color:#e7a9ca}.sheet-front span:nth-child(3){color:#b5b8ff}
+.sheet-front i{width:100%;text-align:center;font:700 10px "Space Grotesk";letter-spacing:.22em;color:#dce9f4;font-style:normal}
+.wordex-spark{position:absolute;color:var(--cyan);font-size:23px;text-shadow:0 0 18px currentColor}
+.spark-a{top:24%;left:25%}.spark-b{right:24%;bottom:22%;color:#d69be9}
+@media(max-width:900px){.project-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.project-card,.project-wide{grid-column:auto;min-height:0}}
+@media(max-width:620px){.project-grid{grid-template-columns:1fr}.project-art{height:180px}}
